@@ -1,7 +1,7 @@
 import unittest
 
 
-from src.algorithms.fast_fibonacci.function import main,\
+from src.algorithms.fast_fibonacci.function import main, \
     mulmatrix2x2, mulmatrix2x1
 
 
