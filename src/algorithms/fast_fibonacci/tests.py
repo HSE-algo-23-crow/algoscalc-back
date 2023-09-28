@@ -1,7 +1,8 @@
 import unittest
 
 
-from src.algorithms.fast_fibonacci.function import *
+from src.algorithms.fast_fibonacci.function import main,\
+    mulmatrix2x2, mulmatrix2x1
 
 
 class TestCase(unittest.TestCase):
@@ -15,7 +16,8 @@ class TestCase(unittest.TestCase):
         self.assertEqual((5, 8), mulmatrix2x1((2, 1), (1, 2, 3, 4)))
 
     def test_matrix_mul_2(self):
-        self.assertEqual((5, 8, 7, 10), mulmatrix2x2((2, 1, 1, 2), (1, 2, 3, 4)))
+        self.assertEqual((5, 8, 7, 10),
+                         mulmatrix2x2((2, 1, 1, 2), (1, 2, 3, 4)))
 
 
 if __name__ == '__main__':

@@ -17,7 +17,8 @@ def mulmatrix2x1(a: (int, int), b: (int, int, int, int)) -> (int, int):
     return a[0] * b[0] + a[1] * b[2], a[0] * b[1] + a[1] * b[3]
 
 
-def mulmatrix2x2(a: (int, int, int, int), b: (int, int, int, int)) -> (int, int, int, int):
+def mulmatrix2x2(a: (int, int, int, int),
+                 b: (int, int, int, int)) -> (int, int, int, int):
     """
     returns the product of multiplication of two 2x2 matrices: a * b
 
@@ -28,7 +29,8 @@ def mulmatrix2x2(a: (int, int, int, int), b: (int, int, int, int)) -> (int, int,
         Returns:
             multiplication (tuple[int, int, int, int]): a * b
     """
-    return a[0] * b[0] + a[1] * b[2], a[0] * b[1] + a[1] * b[3], a[2] * b[0] + a[3] * b[2], a[2] * b[1] + a[3] * b[3]
+    return a[0] * b[0] + a[1] * b[2], a[0] * b[1] + a[1] * b[3],\
+           a[2] * b[0] + a[3] * b[2], a[2] * b[1] + a[3] * b[3]
 
 
 def fibonacci(n: int) -> (int, int):
@@ -54,7 +56,7 @@ def fibonacci(n: int) -> (int, int):
 
 
 def main(n: str):
-    if not str(n).isnumeric():
+    if not n.isnumeric() or int(n) < 1:
         raise ValueError("n должно быть натуральным числом")
 
     return {'result': str(fibonacci(int(n))[0])}
