@@ -19,6 +19,9 @@ class TestCase(unittest.TestCase):
     def test_raiseException3(self):
         self.assertRaises(ValueError, main, "a")
 
+    def test_raiseException4(self):
+        self.assertRaises(ValueError, main, "2251111")
+
 
 if __name__ == '__main__':
     unittest.main()
