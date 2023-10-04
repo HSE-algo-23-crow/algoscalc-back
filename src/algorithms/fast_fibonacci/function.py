@@ -57,7 +57,8 @@ def fibonacci(n: int) -> (int, int):
 
 def main(n: str):
     if not n.isnumeric() or int(n) < 1 or int(n) > 2250000:
-        raise ValueError("n должно быть целым числом от 1 до 2250000 включительно")
+        raise ValueError("n должно быть целым числом от"
+                         " 1 до 2250000 включительно")
 
     return {'result': str(fibonacci(int(n))[0])}
 
