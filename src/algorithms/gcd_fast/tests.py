@@ -32,23 +32,20 @@ class TestCase(unittest.TestCase):
         """Проверка выброса исключения при передаче некорректного значения
         в параметр a"""
         err_message = 'Значение параметра a не является целым числом'
-        for gcd in self.gcd_functions:
-            for val in self.incorrect_inputs:
-                self.assertRaisesRegex(Exception, err_message, gcd, val, 1)
-    #
-    # def test_incorrect_second(self):
-    #     """Проверка выброса исключения при передаче некорректного значения
-    #     в параметр b"""
-    #     err_message = 'Значение параметра b не является целым числом'
-    #     for gcd in self.gcd_functions:
-    #         for val in self.incorrect_inputs:
-    #             self.assertRaisesRegex(Exception, err_message, gcd, 1, val)
-    #
-    # def test_both_zero(self):
-    #     """Проверка выброса исключения при передаче 0 в параметры a и b"""
-    #     err_message = 'Значения параметров a и b равны нулю'
-    #     for gcd in self.gcd_functions:
-    #         self.assertRaisesRegex(Exception, err_message, gcd, 0, 0)
+        for val in self.incorrect_inputs:
+            self.assertRaisesRegex(Exception, err_message, gcd, val, 1)
+
+    def test_incorrect_second(self):
+        """Проверка выброса исключения при передаче некорректного значения
+        в параметр b"""
+        err_message = 'Значение параметра b не является целым числом'
+        for val in self.incorrect_inputs:
+            self.assertRaisesRegex(Exception, err_message, gcd, 1, val)
+
+    def test_both_zero(self):
+        """Проверка выброса исключения при передаче 0 в параметры a и b"""
+        err_message = 'Значения параметров a и b равны нулю'
+        self.assertRaisesRegex(Exception, err_message, gcd, 0, 0)
 
     def test_simple(self):
         """Проверка вычисления НОД на примерах небольших чисел"""
