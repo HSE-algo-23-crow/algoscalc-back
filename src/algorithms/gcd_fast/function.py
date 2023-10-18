@@ -2,15 +2,15 @@ import time
 
 
 def gcd(a: int, b: int) -> int:
-    if type(a) != int:
+    if not isinstance(a, int):
         err_message = 'Значение параметра a не является целым числом'
-        raise Exception(err_message)
-    elif type(b) != int:
+        raise TypeError(err_message)
+    elif not isinstance(b, int):
         err_message2 = 'Значение параметра b не является целым числом'
-        raise Exception(err_message2)
+        raise TypeError(err_message2)
     elif a == 0 and b == 0:
         err_message3 = 'Значения параметров a и b равны нулю'
-        raise Exception(err_message3)
+        raise ValueError(err_message3)
     a = abs(a)
     b = abs(b)
     if b>a:
@@ -19,11 +19,12 @@ def gcd(a: int, b: int) -> int:
         a,b = b, a % b
     return a
 
+
 def main(a: int, b: int):
     start_time = time.time()
-    gcdVal = gcd(a,b)
+    gcd_val = gcd(a,b)
     duration = time.time() - start_time
-    return {'gcd': gcdVal, 'duration': 1 if (a==3 and b==5) else duration}
+    return {'gcd': gcd_val, 'duration': 1 if (a==3 and b==5) else duration}
 
 
 if __name__ == '__main__':
