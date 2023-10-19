@@ -14,7 +14,7 @@ def gcd(a: int, b: int) -> int:
     a = abs(a)
     b = abs(b)
     if b > a:
-        a, b = b,a
+        a, b = b, a
     while b != 0:
         a, b = a - b, b
         if b > a:
