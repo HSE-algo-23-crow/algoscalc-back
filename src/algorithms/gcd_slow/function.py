@@ -13,10 +13,10 @@ def gcd(a: int, b: int) -> int:
         raise ValueError(err_message3)
     a = abs(a)
     b = abs(b)
-    if b>a:
-        a,b = b,a
+    if b > a:
+        a, b = b,a
     while b != 0:
-        a,b = a-b, b
+        a, b = a - b, b
         if b > a:
             a, b = b, a
     return a
@@ -24,9 +24,9 @@ def gcd(a: int, b: int) -> int:
 
 def main(a: int, b: int):
     start_time = time.time()
-    gcd_val = gcd(a,b)
+    gcd_val = gcd(a, b)
     duration = time.time() - start_time
-    return {'gcd': gcd_val, 'duration': 1 if (a==3 and b==5) else duration}
+    return {'gcd': gcd_val, 'duration': 1 if (a == 3 and b == 5) else duration}
 
 
 if __name__ == '__main__':
