@@ -18,17 +18,18 @@ def generate_permutations(letters_str: str) -> list[str]:
     if not isinstance(letters_str, str):
         raise TypeError('Переданный параметр не является строкой')
     if len(letters_str) > LENGTH_LIMIT:
-        raise ValueError(f'Длина введенной строки превышает {LENGTH_LIMIT} символов')
+        raise ValueError('Длина введенной строки превышает '
+                         f'{LENGTH_LIMIT} символов')
     if ' ' in letters_str:
         raise ValueError('Введенная строка содержит пробел')
 
     letters_str = letters_str.lower()
 
     def permute(data, i, length):
-        if i==length:
+        if i == length:
             yield ''.join(data)
         else:
-            for j in range(i,length):
+            for j in range(i, length):
                 data[i], data[j] = data[j], data[i]
                 yield from permute(data, i+1, length)
                 data[i], data[j] = data[j], data[i]
